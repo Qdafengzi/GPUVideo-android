@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion COMPILE_SDK_VERSION as int
+    compileSdk 34
     namespace 'com.daasuu.gpuv'
     defaultConfig {
-        minSdkVersion COMPILE_MIN_SDK_VERSION as int
-        targetSdkVersion COMPILE_SDK_VERSION as int
-        versionCode VERSION_CODE as int
-        versionName VERSION_NAME
+        minSdkVersion 24
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
 
     }
 
@@ -23,6 +23,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compileOnly "com.google.android.exoplayer:exoplayer-core:$exo_player_version"
+    compileOnly "com.google.android.exoplayer:exoplayer-core:2.19.1"
 
 }

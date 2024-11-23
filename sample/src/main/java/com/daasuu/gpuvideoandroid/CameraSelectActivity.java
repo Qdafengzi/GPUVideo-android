@@ -23,7 +23,8 @@ public class CameraSelectActivity extends AppCompatActivity {
             LandscapeCameraActivity.startActivity(CameraSelectActivity.this);
         });
         findViewById(R.id.square).setOnClickListener(v -> {
-            SquareCameraActivity.startActivity(CameraSelectActivity.this);
+//            SquareCameraActivity.startActivity(CameraSelectActivity.this);
+            NewActivity.startActivity(this);
         });
 
     }

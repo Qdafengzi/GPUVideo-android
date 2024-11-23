@@ -7,7 +7,11 @@
   <uses-feature android:name="android.hardware.camera.autofocus" />
 
   <uses-permission android:name="android.permission.CAMERA" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+      android:maxSdkVersion="32" />
+
+  <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+
 
   <!-- Microphone permissions -->
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -26,11 +30,7 @@
     <activity
         android:exported="true"
         android:name=".MainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
 
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
     </activity>
 
     <activity
@@ -44,6 +44,16 @@
     <activity
       android:name=".PortraitCameraActivity"
       android:screenOrientation="portrait" />
+    <activity android:name=".NewActivity"
+        android:exported="true"
+        android:screenOrientation="portrait"
+        >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
 
     <activity
       android:name=".LandscapeCameraActivity"

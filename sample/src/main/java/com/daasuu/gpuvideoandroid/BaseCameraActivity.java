@@ -58,6 +58,9 @@ public class BaseCameraActivity extends AppCompatActivity {
 
             if (recordBtn.getText().equals(getString(R.string.app_record))) {
                 filepath = getVideoFilePath();
+                File file = new File(filepath);
+
+                Log.d("视频大小",file.exists()+"  "+filepath);
                 GPUCameraRecorder.start(filepath);
                 recordBtn.setText("Stop");
                 lv.setVisibility(View.GONE);
@@ -172,6 +175,7 @@ public class BaseCameraActivity extends AppCompatActivity {
 
                     @Override
                     public void onRecordComplete() {
+                        Log.d("视频文件",""+filepath);
                         exportMp4ToGallery(getApplicationContext(), filepath);
                     }
 
